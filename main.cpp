@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     // dummy client code for demonstration so far
 
-    int n = 9;
+    int n = 19;
     Board board = Board(n);
 
 

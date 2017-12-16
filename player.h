@@ -4,26 +4,32 @@
 #include <string>
 
 
-class Player{
+class Player {
   std::string name;
 
-public:
+ public:
 
 
   Player()
-    :name(""){
-    }
+    :name("") {
+  }
 
   Player(const std::string name)
-    :name(name){
-    }
+    :name(name) {
+  }
 
-  ~Player(){}
+  ~Player() {}
 
-  std::string getName()const{return this->name;}
+  std::string getName()const {
+    return this->name;
+  }
 
-  bool operator==(const Player &other){ return (this == &other); }
-  bool operator!=(const Player &other){ return !(*this == other); }
+  bool operator==(const Player &other) {
+    return (this == &other);
+  }
+  bool operator!=(const Player &other) {
+    return !(*this == other);
+  }
 
 };
 

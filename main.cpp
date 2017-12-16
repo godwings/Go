@@ -1,35 +1,34 @@
-#include <iostream>
-#include "board.h"
-#include "player.h"
-#include "printer.h"
+#include "gaming.h"
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
-    // dummy client code for demonstration so far
+int main(int argc, char *argv[]) {
+  Game *game = new Game();
+  game->Play();
+  // dummy client code for demonstration so far
 
-    int n = 9;
-    Board board = Board(n);
-
-
-    Player *p1 = new Player(),
-        *p2 = new Player();
-    Printer printer = Printer();
+  // int n = 19;
+  // Board board = Board(n);
 
 
-    board.playAt(0,0, p1);
-    board.playAt(4,5, p2);
-    board.playAt(6,7, p1);
+  // Player *p1 = new Player(),
+  // *p2 = new Player();
+  // Printer printer = Printer();
 
 
-    printer.printBoard(board, p1);
-    cout << endl; cout << endl;
+  // board.playAt(0,0, p1);
+  // board.playAt(4,5, p2);
+  // board.playAt(6,7, p1);
 
 
-    board.removeStone(0,0);
-    printer.printBoard(board, p1);
+  // printer.printBoard(board, p1);
+  // cout << endl;
+  // cout << endl;
 
-    delete p1, p2;
-    return 0;
+
+  // board.removeStone(0,0);
+  // printer.printBoard(board, p1);
+
+  // delete p1, p2;
+  return 0;
 }

@@ -6,15 +6,15 @@
 
 class Board;
 
-class Printer{
-public:
+class Printer {
+ public:
   Printer(const char emptyCell='.', const char player1='x', const char player2='o');
-  ~Printer(){}
+  ~Printer() {}
 
   void printBoard(Board& board, const Player* player1);
 
 
-private:
+ private:
   char emptyCellIcon;
   char player1Icon;
   char player2Icon;

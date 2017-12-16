@@ -8,63 +8,63 @@
 #include "player.h"
 
 
-class Cell{
-public:
+class Cell {
+ public:
 
-    Cell(int row, int col)
-        :column_coordinate(col), row_coordinate(row), occupied(false), playerOwned(NULL){
-    }
-    ~Cell(){}
+  Cell(int row, int col)
+    :column_coordinate(col), row_coordinate(row), occupied(false), playerOwned(NULL) {
+  }
+  ~Cell() {}
 
-    bool    occupy          (Player* p);
-    void    free            ();
-    Player* changePossession(Player* newPlayer);
+  bool    occupy          (Player* p);
+  void    free            ();
+  Player* changePossession(Player* newPlayer);
 
-    bool    isOccupied      ()const;
-    bool    belongsTo       (const Player* p)const;
+  bool    isOccupied      ()const;
+  bool    belongsTo       (const Player* p)const;
 
-    int     getRow          ()const;
-    int     getColumn       ()const;
-    Player* getPlayerOwned  ()const;
+  int     getRow          ()const;
+  int     getColumn       ()const;
+  Player* getPlayerOwned  ()const;
 
 
-private:
-    int row_coordinate;
-    int column_coordinate;
+ private:
+  int row_coordinate;
+  int column_coordinate;
 
-    bool occupied;
-    Player* playerOwned;
+  bool occupied;
+  Player* playerOwned;
 };
 
 
 
 
 
-class Board{
-    friend class Printer;
-public:
+class Board {
+  friend class Printer;
+ public:
 
-    Board(int size);
-    ~Board();
+  Board(int size);
+  ~Board();
 
-    bool    playAt        (const int row, const int col, Player* p);
-    Player* removeStone   (const int row, const int col);
-    int     countStonesFor(const Player* p);
+  bool    playAt        (const int row, const int col, Player* p);
+  Player* removeStone   (const int row, const int col);
+  int     countStonesFor(const Player* p);
 
-    bool isCellOccupied   (const int row, const int col);
-    bool isCellOwnedBy    (const int row, const int col, const Player* p);
-    bool isEmpty          ()const;
-    bool isFull           ()const;
+  bool isCellOccupied   (const int row, const int col);
+  bool isCellOwnedBy    (const int row, const int col, const Player* p);
+  bool isEmpty          ()const;
+  bool isFull           ()const;
 
-    int getSize           ()const;
+  int getSize           ()const;
 
 
-private:
-    int size;
-    std::vector< std::vector<Cell> > table;
-    int occupiedCells;
+ private:
+  int size;
+  std::vector< std::vector<Cell> > table;
+  int occupiedCells;
 
-    Cell& getCell(const int row,const int col);
+  Cell& getCell(const int row,const int col);
 };
 
 #endif // BOARD_H

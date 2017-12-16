@@ -10,6 +10,7 @@ set(SOURCE_FILES
         player.h
         printer.cpp
         printer.h
+        gaming.h
         util.h)
 
 add_executable(Go ${SOURCE_FILES})

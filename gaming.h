@@ -4,13 +4,15 @@
 
 #include <cctype>
 #include <string>
+#include <cstdlib>
 #include <iostream>
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
 
-#define cls() cout << string(100, '\n');
+// #define cls() cout << string(100, '\n');
+#define cls() if (system("CLS")) system("clear");
 
 class Game {
  private:
